@@ -1,0 +1,101 @@
+@import "tailwindcss";
+/* @import "tw-animate-css"; */
+
+/* ================= Custom Media Queries for Mobile Variants ================= */
+@custom-variant m1 {
+  @media (min-width: 320px) {
+    @slot;
+  }
+}
+
+@custom-variant m2 {
+  @media (min-width: 375px) {
+    @slot;
+  }
+}
+
+@custom-variant m3 {
+  @media (min-width: 420px) {
+    @slot;
+  }
+}
+
+/* ================= DM Sans  ================= */
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DM Sans/DMSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DM Sans/DMSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DM Sans/DMSans-Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================= Global CSS Variables ================= */
+
+:root {
+  /* ================= COLOR ================= */
+}
+
+@theme inline {
+}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+/* ================= Font Family Utilities ================= */
+
+@utility font-dm-sans-400 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+
+@utility font-dm-sans-500 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}
+
+@utility font-dm-sans-600 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+}
+
+@utility font-dm-sans-700 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+}
+
+/* ================= Typography Utilities ================= */
+
+/* ================= Background Color Utilities ================= */
+/* @utility bgcolor-primary {
+  background-color: var(--color-primary);
+} */
+
+/* ================= Text Color Utilities ================= */
+
+/* @utility textcolor-primary {
+  color: var(--color-primary);
+} */
+
+/* ================= Border Color Utilities ================= */
+
+/* @utility bordercolor-primary {
+  border-color: var(--color-primary);
+} */
