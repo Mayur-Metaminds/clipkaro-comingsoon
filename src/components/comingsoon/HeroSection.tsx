@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-4 overflow-hidden">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center  pt-5 md:pt-20 pb-16 px-4 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-hero-glow opacity-60 pointer-events-none z-0" />
 
@@ -31,12 +31,12 @@ export const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center  w-full justify-center"
         >
-          <div className="h-[1px] w-16 md:w-24 border-l-3 bg-gradient-to-r from-transparent to-white/50"></div>
-          <span className=" border-x-2  px-5  text-center  font-dm-sans-500 text-[12px] md:text-[16px]   leading-[normal]  tracking-[3.04px]  text-white  uppercase">
+          <div className="h-[1px] w-10 md:w-24 border-l-3 bg-gradient-to-r from-transparent to-white/50"></div>
+          <span className=" border-x-2  px-3 md:px-5  text-center  font-dm-sans-500 text-[12px] md:text-[16px]   leading-[normal] whitespace-nowrap tracking-[3.04px]  text-white  uppercase">
             Launching Soon in India
           </span>
 
-          <div className="h-[1px] w-16 md:w-24 bg-gradient-to-l from-transparent to-white/50"></div>
+          <div className="h-[1px] w-10 md:w-24 bg-gradient-to-l from-transparent to-white/50"></div>
         </motion.div>
 
         {/* Main Title */}
