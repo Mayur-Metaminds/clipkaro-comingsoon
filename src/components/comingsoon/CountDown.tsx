@@ -42,11 +42,11 @@ export const Countdown = () => {
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center mx-2 md:mx-4">
-      <span className=" text-center  font-dm-sans-400  text-[40px]    leading-[36px]  tracking-[-0.8px]  text-[#D2DEF1]  tabular-nums">
+      <span className=" text-center  font-dm-sans-400 text-[33px]  md:text-[40px]    leading-[36px]  tracking-[-0.8px]  text-[#D2DEF1]  tabular-nums">
         {value.toString().padStart(2, "0")}
       </span>
 
-      <span className=" text-center font-dm-sans-600  text-[20px]  leading-[29px]  tracking-[-0.4px] text-[#95A9CC]/70 mt-1">
+      <span className=" text-center font-dm-sans-600 text-[16px]  md:text-[20px]  leading-[29px]  tracking-[-0.4px] text-[#95A9CC]/70 mt-1">
         {label}
       </span>
     </div>
@@ -60,7 +60,7 @@ export const Countdown = () => {
 
   return (
     <div className="flex flex-col items-center relative">
-      <p className="mb-[19px]  text-center  font-dm-sans-600 text-[20px] leading-[29px]  tracking-[-0.4px]  mb-4  bg-[linear-gradient(128deg,#95A9CC_25.87%,#BBCFF0_74.13%)]  bg-clip-text text-transparent">
+      <p className="mb-[19px]  text-center  font-dm-sans-600 text-[16px] md:text-[20px] leading-[29px]  tracking-[-0.4px]  mb-4  bg-[linear-gradient(128deg,#95A9CC_25.87%,#BBCFF0_74.13%)]  bg-clip-text text-transparent">
         Launching in
       </p>
 

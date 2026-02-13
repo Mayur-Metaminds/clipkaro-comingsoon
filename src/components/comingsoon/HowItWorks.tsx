@@ -26,10 +26,10 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="w-full py-20 px-4 z-10 relative">
+    <section className="w-full pb-6 lg:py-20 px-4 z-10 relative">
       {/* Title section  */}
       <div className="mx-auto max-w-[989px] mb-[150px] z-20 w-full">
-        <h2 className="  text-center  font-dm-sans-600 text-[64px]  leading-[110%]  tracking-[-1.28px]  max-w-5xl  mx-auto">
+        <h2 className="  text-center  font-dm-sans-600 text-[28px] md:text-[64px]  leading-[110%]  tracking-[-1.28px]  max-w-5xl  mx-auto">
           <span
             className="
     bg-[linear-gradient(128deg,#D9E7FF_25.87%,#95A9CC_74.13%)]
@@ -43,15 +43,15 @@ export const HowItWorks = () => {
           </span>
         </h2>
       </div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl -mt-10 md:mt-0 mx-auto">
         <h2
-          className=" text-center  font-dm-sans-600 text-[40px]    leading-[110%]  tracking-[-0.8px]  mb-16  bg-[linear-gradient(128deg,#D9E7FF_25.87%,#95A9CC_74.13%)] bg-clip-text text-transparent
+          className=" text-center  font-dm-sans-600 text-[28px] md:text-[40px]    leading-[110%]  tracking-[-0.8px]  mb-16  bg-[linear-gradient(128deg,#D9E7FF_25.87%,#95A9CC_74.13%)] bg-clip-text text-transparent
 "
         >
           How it works
         </h2>
 
-        <div className="relative overflow-hidden flex flex-col md:flex-row justify-between items-start gap-12 md:gap-4">
+        <div className="relative overflow-hidden flex flex-col md:flex-row justify-between items-center lg:items-start gap-12 md:gap-4">
           {/* Connecting Line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-[13%] right-[13%] h-[2px]  z-0">
             <svg

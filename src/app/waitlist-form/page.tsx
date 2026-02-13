@@ -36,7 +36,7 @@ export default function WaitlistForm() {
   };
 
   return (
-    <section className="bg-black relative w-full h-screen flex flex-col gap-10 items-center justify-center">
+    <section className="bg-black px-4 lg:px-0 relative w-full h-screen flex flex-col gap-10 items-center justify-center">
       <div className="fixed top-0 w-screen h-screen opacity-50 z-0 ">
         <img
           src="/images/comingsoon/herobgimg.png"
@@ -45,7 +45,7 @@ export default function WaitlistForm() {
         />
       </div>
 
-      <div className="relative">
+      <div className="relative ">
         <h2 className="text-center font-dm-sans-500 font-medium text-3xl leading-[48px]  bg-clip-text text-transparent bg-[linear-gradient(136deg,#96B8EB_31.57%,#C1DAF8_66.56%)]">
           Join the Waitlist
         </h2>
@@ -57,7 +57,7 @@ export default function WaitlistForm() {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="rounded-[16px] bg-gradient-to-br from-[rgba(52,62,77,0.8)] to-[rgba(4,23,54,0.9)] backdrop-blur-lg max-w-md mx-auto flex flex-col max-w-[462px] px-8 py-8  gap-6"
+        className="rounded-[16px] bg-gradient-to-br from-[rgba(52,62,77,0.8)] to-[rgba(4,23,54,0.9)] backdrop-blur-lg max-w-md mx-auto flex flex-col max-w-[462px] px-5 md:px-8 py-7 md:py-8  gap-6"
       >
         <label className="text-[#F8FAFC] font-dm-sans font-medium text-sm leading-[14px]">
           Email <span className="text-[#00BFFF]">*</span>

@@ -56,16 +56,16 @@ const FeatureCard = ({
   title: string;
   description: string;
 }) => (
-  <div className="relative p-6 h-[262px] flex items-start justify-end flex-col  w-[360px] xl:w-[383px] rounded-[10px] border border-[rgba(255,255,255,0.10)] bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] ">
+  <div className="relative p-6 md:h-[262px] flex items-start justify-end flex-col h-[210px] w-[327px]  md:w-[360px] xl:w-[383px] rounded-[10px] border border-[rgba(255,255,255,0.10)] bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] ">
     <div className="w-15 h-15 rounded-[10px] bg-[#60A5FA33] flex items-center justify-center mb-[28px] group-hover:scale-105 transition-transform">
       {/* <Icon className="w-7 h-7 text-[#2E5BBA] fill-[#2E5BBA]/20" /> */}
       <img src={icon} alt="" />
     </div>
 
-    <h3 className="text-[24px] leading-[110%] tracking-[-0.48px] font-dm-sans-600 text-white mb-[9px]">
+    <h3 className="text-[20px] md:text-[24px] leading-[110%] tracking-[-0.48px] font-dm-sans-600 text-white mb-[9px]">
       {title}
     </h3>
-    <p className="text-[#D9E7FFB2] text-[16px] font-dm-sans-500  leading-[150%] tracking-[-0.32px]">
+    <p className="text-[#D9E7FFB2] text-[13px] md:text-[16px] font-dm-sans-500  leading-[150%] tracking-[-0.32px]">
       {description}
     </p>
   </div>
@@ -73,14 +73,14 @@ const FeatureCard = ({
 
 export const FeaturesSection = () => {
   return (
-    <section className="w-full py-24 px-4 relative z-20">
+    <section className="w-full py-14 md:py-24 px-4 relative z-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 space-y-[10px]">
           <span className="text-[#2E5BBA] font-medium tracking-widest text-[16px] tracking-[2.4px] leading-[150%] font-dm-sans-500 uppercase ">
             WHY CHOOSE CLIPKARO
           </span>
           <h2
-            className="  text-center font-dm-sans-600  text-[40px] leading-[110%] tracking-[-0.8px]
+            className=" mt-3 md:mt-0 text-center font-dm-sans-600 text-[28px] md:text-[40px] leading-[110%] tracking-[-0.8px]
   bg-[linear-gradient(128deg,#D9E7FF_25.87%,#95A9CC_74.13%)] bg-clip-text text-transparent
 "
           >

@@ -32,7 +32,7 @@ export const HeroSection = () => {
           className="flex items-center  w-full justify-center"
         >
           <div className="h-[1px] w-16 md:w-24 border-l-3 bg-gradient-to-r from-transparent to-white/50"></div>
-          <span className=" border-x-2  px-5  text-center  font-dm-sans-500  text-[16px]   leading-[normal]  tracking-[3.04px]  text-white  uppercase">
+          <span className=" border-x-2  px-5  text-center  font-dm-sans-500 text-[12px] md:text-[16px]   leading-[normal]  tracking-[3.04px]  text-white  uppercase">
             Launching Soon in India
           </span>
 
@@ -44,7 +44,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center text-[134px] font-dm-sans-500  leading-[normal]  tracking-[-5.36px]  [text-wrap:balance]
+          className="text-center text-[70px] md:text-[134px] font-dm-sans-500  leading-[normal]  tracking-[-5.36px]  [text-wrap:balance]
   "
         >
           <span className=" bg-[linear-gradient(180deg,#92BEF5_0%,#C1DAF8_114.36%)]  bg-clip-text  text-transparent ">
@@ -57,7 +57,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className=" text-center font-dm-sans-500 text-[24px] leading-[36px] tracking-[-0.48px] text-[#C9DCFB] max-w-2xl mx-auto"
+          className=" text-center font-dm-sans-500 text-[18px] md:text-[24px] leading-[36px] tracking-[-0.48px] text-[#C9DCFB] max-w-2xl mx-auto"
         >
           India's first performance-based creator app that actually pays you for
           every 1k views.
@@ -122,7 +122,7 @@ export const HeroSection = () => {
 `}</style>
 
           <p
-            className=" text-center font-dm-sans-500 text-[20px]  leading-[29px]  tracking-[-0.4px]  text-[#B2C4E3]
+            className=" text-center font-dm-sans-500 text-[16px] md:text-[20px]  leading-[29px]  tracking-[-0.4px]  text-[#B2C4E3]
 "
           >
             Only <span className="text-white">2,847</span> spots left in early
