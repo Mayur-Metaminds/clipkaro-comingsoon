@@ -47,11 +47,13 @@ export const Footer = () => {
             <span className="font-dm-sans-600">Linkedin</span>
           </a>
         </div>
-
+<div className=" ">
         <p className="  text-center  font-dm-sans-600 text-[12px] md:text-[20px]    leading-[29px]  tracking-[-0.4px]  text-[#95A9CC]/70  mt-8">
           Tag us in your clips with #ClipKaroCreator
         </p>
-      </div>
+     <a href="/privacy-policy" className="  text-center  font-dm-sans-400 text-[12px] md:text-[16px]    leading-[29px]  tracking-[-0.4px]  text-[#95A9CC]/70 mt-8">Privacy Policy</a>
+     </div>  </div>
+
     </footer>
   );
 };
