@@ -1,0 +1,69 @@
+{
+  "title": "Privacy Policy",
+  "sections": [
+    {
+      "title": "1. Information We Collect",
+      "content": [
+        "We collect information you provide directly to us, including:"
+      ],
+      "list": [
+        "Name and contact information",
+        "Account credentials",
+        "Profile information",
+        "Communication preferences"
+      ]
+    },
+    {
+      "title": "2. How We Use Your Information",
+      "content": ["We use the information we collect to:"],
+      "list": [
+        "Provide, maintain, and improve our services",
+        "Process transactions and send related information",
+        "Send technical notices and support messages",
+        "Respond to your comments and questions",
+        "Monitor and analyze trends and usage"
+      ]
+    },
+    {
+      "title": "3. Information Sharing",
+      "content": [
+        "We do not share your personal information with third parties except:"
+      ],
+      "list": [
+        "With your consent",
+        "To comply with legal obligations",
+        "To protect our rights and safety",
+        "With service providers who assist our operations"
+      ]
+    },
+    {
+      "title": "4. Cookies and Tracking",
+      "content": [
+        "We use cookies and similar tracking technologies to track activity on our service. You can control cookies through your browser settings."
+      ]
+    },
+    {
+      "title": "5. Data Security",
+      "content": [
+        "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+      ]
+    },
+    {
+      "title": "6. Your Rights",
+      "content": ["You have the right to:"],
+      "list": [
+        "Access your personal information",
+        "Correct inaccurate information",
+        "Request deletion of your information",
+        "Object to processing of your information",
+        "Withdraw consent at any time"
+      ]
+    },
+    {
+      "title": "7. Contact Us",
+      "content": [
+        "If you have any questions about this Privacy Policy, please contact us at: <a href=\"mailto:privacy@example.com\" class=\"font-medium text-stone-900 hover:text-stone-700 dark:text-stone-100 dark:hover:text-stone-300\">privacy@example.com</a>"
+      ]
+    }
+  ]
+}

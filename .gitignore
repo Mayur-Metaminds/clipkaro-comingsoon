@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Generated Types
+# Uncomment the line below if you DON'T want to commit generated types
+# Recommended: Commit generated types so they're available without running backend
+# src/types/api-generated.ts
+.claude/*

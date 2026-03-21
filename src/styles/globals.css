@@ -1,0 +1,1839 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/**
+ * Unified Theme System
+ * Integrates design tokens with shadcn/ui CSS variables
+ *
+ * To rebrand:
+ * 1. Update src/config/theme.config.ts
+ * 2. Or directly edit the CSS variables below for quick changes
+ */
+
+/* ================= Custom Media Queries for Mobile Variants ================= */
+@custom-variant m1 {
+  @media (min-width: 320px) {
+    @slot;
+  }
+}
+
+@custom-variant m2 {
+  @media (min-width: 375px) {
+    @slot;
+  }
+}
+
+@custom-variant m3 {
+  @media (min-width: 420px) {
+    @slot;
+  }
+}
+
+/* ================= DM Sans ================= */
+
+@font-face {
+  font-family: "DM Sans";
+  src:
+    url("/fonts/DMSans/DMSans-Regular.woff2") format("woff2"),
+    url("/fonts/DMSans/DMSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src:
+    url("/fonts/DMSans/DMSans-Medium.woff2") format("woff2"),
+    url("/fonts/DMSans/DMSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src:
+    url("/fonts/DMSans/DMSans-Semi-Bold.woff2") format("woff2"),
+    url("/fonts/DMSans/DMSans-Semi-Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src:
+    url("/fonts/DMSans/DMSans-Bold.woff2") format("woff2"),
+    url("/fonts/DMSans/DMSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================= Anton Font Family ================= */
+
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton/anton.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================ Londrina Sketch Font Family ================= */
+
+@font-face {
+  font-family: "Londrina Sketch";
+  src: url("/fonts/LondrinaSketch/LondrinaSketch-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Register theme colors for Tailwind CSS v4 */
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+@layer base {
+  :root {
+    /* ========================================
+       SHADCN/UI REQUIRED VARIABLES
+       ======================================== */
+
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary brand color */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary/muted */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    /* Muted backgrounds */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Accent */
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive/error */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 217 91% 60%;
+
+    /* Border radius for components */
+    --radius: 0.5rem;
+
+    /* ========================================
+       CUSTOM DESIGN TOKENS
+       ======================================== */
+
+    /* Brand Colors - Primary */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary: var(--color-primary-600);
+
+    /* Brand Colors - Secondary */
+    --color-secondary-50: #f8fafc;
+    --color-secondary-100: #f1f5f9;
+    --color-secondary-200: #e2e8f0;
+    --color-secondary-300: #cbd5e1;
+    --color-secondary-400: #94a3b8;
+    --color-secondary-500: #64748b;
+    --color-secondary-600: #475569;
+    --color-secondary-700: #334155;
+    --color-secondary-800: #1e293b;
+    --color-secondary-900: #0f172a;
+
+    /* Brand Colors - Accent */
+    --color-accent-50: #faf5ff;
+    --color-accent-100: #f3e8ff;
+    --color-accent-200: #e9d5ff;
+    --color-accent-300: #d8b4fe;
+    --color-accent-400: #c084fc;
+    --color-accent-500: #a855f7;
+    --color-accent-600: #9333ea;
+    --color-accent-700: #7e22ce;
+    --color-accent-800: #6b21a8;
+    --color-accent-900: #581c87;
+    --color-accent: var(--color-accent-600);
+
+    /* Semantic Colors */
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+    --color-info: #2563eb;
+
+    /* Typography */
+    --font-sans:
+      var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    --font-mono:
+      var(--font-geist-mono), "SF Mono", Monaco, "Courier New", monospace;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+    --surface-fill: var(--white-linear);
+    --surface-bg: hsl(0, 0%, 100%);
+
+    /* =============== Custom typography variables =============== */
+
+    --font: "DM Sans", sans-serif;
+    --font-anton: "Anton", sans-serif;
+    --font-londrina-sketch: "Londrina Sketch", cursive;
+
+    /* Mobile/h1 */
+    --h1-font: var(--font);
+    --h1-size: 26px;
+    --h1-font-style: normal;
+    --h1-weight: 700;
+    --h1-line-height: 123.077%;
+
+    /* Mobile/h2 */
+    --h2-font: var(--font);
+    --h2-size: 20px;
+    --h2-font-style: normal;
+    --h2-weight: 700;
+    --h2-line-height: 140%;
+
+    /* Mobile/h3 */
+    --h3-font: var(--font);
+    --h3-size: 18px;
+    --h3-font-style: normal;
+    --h3-weight: 600;
+    --h3-line-height: 144.444%;
+
+    /* Mobile/h4 */
+    --h4-font: var(--font);
+    --h4-size: 16px;
+    --h4-font-style: normal;
+    --h4-weight: 700;
+    --h4-line-height: 150%;
+
+    /* Mobile/card heading */
+    --card-heading-font: var(--font);
+    --card-heading-size: 16px;
+    --card-heading-font-style: normal;
+    --card-heading-weight: 700;
+    --card-heading-line-height: 150%;
+
+    /* Mobile/Body 0 */
+    --body-not-font: var(--font);
+    --body-not-size: 14px;
+    --body-not-font-style: normal;
+    --body-not-weight: 700;
+    --body-not-line-height: 157.143%;
+
+    /* Mobile/Body (b) */
+    --body-b-font: var(--font);
+    --body-b-size: 14px;
+    --body-b-font-style: normal;
+    --body-b-weight: 700;
+    --body-b-line-height: 157.143%;
+
+    /* Mobile/Body (m) */
+    --body-m-font: var(--font);
+    --body-m-size: 14px;
+    --body-m-font-style: normal;
+    --body-m-weight: 500;
+    --body-m-line-height: 157.143%;
+
+    /* Mobile/CTA */
+    --cta-font: var(--font);
+    --cta-size: 14px;
+    --cta-font-style: normal;
+    --cta-weight: 600;
+    --cta-line-height: 142.857%;
+
+    /* Mobile/Body 2(m) */
+    --body-two-m-font: var(--font);
+    --body-two-m-size: 12px;
+    --body-two-m-font-style: normal;
+    --body-two-m-weight: 500;
+    --body-two-m-line-height: 150%;
+
+    /* Mobile/Body 3(sb) */
+    --body-three-sb-font: var(--font);
+    --body-three-sb-size: 12px;
+    --body-three-sb-font-style: normal;
+    --body-three-sb-weight: 400;
+    --body-three-sb-line-height: 150%;
+
+    /* Mobile/Hint Text */
+    --hint-text-font: var(--font);
+    --hint-text-size: 12px;
+    --hint-text-font-style: normal;
+    --hint-text-weight: 400;
+    --hint-text-line-height: 133.333%;
+
+    /* --------------------- landing page typography (Mobile)------------- */
+
+    /* Landing heading */
+    --landing-heading-font: var(--font-anton);
+    --landing-heading-size: 45px;
+    --landing-heading-font-style: normal;
+    --landing-heading-weight: 400;
+    --landing-heading-line-height: 110%;
+    --landing-heading-text-transform: uppercase;
+
+    /* Landing heading 2 */
+    --landing-heading2-font: var(--font-anton);
+    --landing-heading2-size: 26px;
+    --landing-heading2-font-style: normal;
+    --landing-heading2-weight: 400;
+    --landing-heading2-line-height: 110%;
+    --landing-heading2-text-transform: uppercase;
+
+    /* Landing heading 3 */
+    --landing-heading3-font: var(--font-anton);
+    --landing-heading3-size: 30px;
+    --landing-heading3-font-style: normal;
+    --landing-heading3-weight: 400;
+    --landing-heading3-line-height: 110%;
+    --landing-heading3-text-transform: uppercase;
+
+    /* Landing section heading */
+    --landing-section-heading-font: var(--font-anton);
+    --landing-section-heading-size: 30px;
+    --landing-section-heading-font-style: normal;
+    --landing-section-heading-weight: 400;
+    --landing-section-heading-line-height: 110%;
+    --landing-section-heading-text-transform: uppercase;
+
+    /*  Landing Section heading2 */
+    --landing-section-heading2-font: var(--font);
+    --landing-section-heading2-size: 14px;
+    --landing-section-heading2-font-style: normal;
+    --landing-section-heading2-weight: 600;
+    --landing-section-heading2-line-height: 16px;
+    --landing-section-heading2-letter-spacing: 1.2px;
+    --landing-section-heading2-text-transform: uppercase;
+
+    /* landing Timer text */
+    --landing-timer-font: var(--font);
+    --landing-timer-size: 36px;
+    --landing-timer-font-style: normal;
+    --landing-timer-weight: 900;
+    --landing-timer-line-height: 44px;
+
+    /* Landing Signup text  */
+    --landing-signup-font: var(--font-anton);
+    --landing-signup-size: 24px;
+    --landing-signup-font-style: normal;
+    --landing-signup-weight: 400;
+    --landing-signup-line-height: 110%;
+    --landing-signup-text-transform: uppercase;
+
+    /* Landing card heading */
+    --landing-card-heading-font: var(--font-anton);
+    --landing-card-heading-size: 20px;
+    --landing-card-heading-font-style: normal;
+    --landing-card-heading-weight: 400;
+    --landing-card-heading-line-height: 140%;
+    --landing-card-heading-text-transform: uppercase;
+
+    /* landing subtext */
+    --landing-subtext-font: var(--font);
+    --landing-subtext-size: 24px;
+    --landing-subtext-font-style: normal;
+    --landing-subtext-weight: 600;
+    --landing-subtext-line-height: 110%;
+
+    /* Landing section sub heading  */
+    --landing-section-sub-heading-font: var(--font);
+    --landing-section-sub-heading-size: 12px;
+    --landing-section-sub-heading-font-style: normal;
+    --landing-section-sub-heading-weight: 600;
+    --landing-section-sub-heading-line-height: 110%;
+    --landing-section-sub-heading-text-transform: uppercase;
+
+    /* Landing questions  */
+    --landing-questions-font: var(--font);
+    --landing-questions-size: 16px;
+    --landing-questions-font-style: normal;
+    --landing-questions-weight: 600;
+    --landing-questions-line-height: 28px;
+
+    /* landing cta */
+    --landing-cta-font: var(--font-anton);
+    --landing-cta-size: 16px;
+    --landing-cta-font-style: normal;
+    --landing-cta-weight: 400;
+    --landing-cta-line-height: 48px;
+
+    /* landing eyebrow */
+    --landing-eyebrow-font: var(--font);
+    --landing-eyebrow-size: 14px;
+    --landing-eyebrow-font-style: normal;
+    --landing-eyebrow-weight: 600;
+    --landing-eyebrow-line-height: 110%;
+    --landing-eyebrow-letter-spacing: 1.5px;
+    --landing-eyebrow-text-transform: uppercase;
+
+    /* landing body 4 */
+    --landing-body4-font: var(--font);
+    --landing-body4-size: 14px;
+    --landing-body4-font-style: normal;
+    --landing-body4-weight: 500;
+    --landing-body4-line-height: 24px;
+
+    /* landing body 3 */
+    --landing-body3-font: var(--font);
+    --landing-body3-size: 12px;
+    --landing-body3-font-style: normal;
+    --landing-body3-weight: 500;
+    --landing-body3-line-height: 140%;
+
+    /* landing body */
+    --landing-body-font: var(--font);
+    --landing-body-size: 12px;
+    --landing-body-font-style: normal;
+    --landing-body-weight: 500;
+    --landing-body-line-height: 110%;
+
+    /* landing body-2 */
+    --landing-body2-font: var(--font);
+    --landing-body2-size: 12px;
+    --landing-body2-font-style: normal;
+    --landing-body2-weight: 500;
+    --landing-body2-line-height: 20px;
+    --landing-body2-letter-spacing: 4.2px;
+    --landing-body2-text-transform: uppercase;
+
+    /* Landing info text */
+    --landing-info-text-font: var(--font);
+    --landing-info-text-size: 10px;
+    --landing-info-text-font-style: normal;
+    --landing-info-text-weight: 400;
+    --landing-info-text-line-height: 16px;
+    --landing-info-text-text-transform: uppercase;
+
+    /* =============== Custom color variables =============== */
+
+    --final-color: linear-gradient(
+      90deg,
+      #6a3cff 0%,
+      #b000ff 40%,
+      #ff1aae 75%,
+      #ff4fa3 100%
+    );
+
+    --bgsecondary: #0b0b23;
+
+    --white-linear: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 100%
+    );
+
+    --linear-1: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.27) 0%,
+      rgba(0, 0, 0, 0.27) 100%
+    );
+
+    --linear-1-17: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 100%
+    );
+
+    --linear-1-5: linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.05) 0%,
+      rgba(176, 0, 255, 0.05) 40%,
+      rgba(255, 26, 174, 0.05) 75%,
+      rgba(255, 79, 163, 0.05) 100%
+    );
+
+    --linear-1-14: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.14) 100%
+    );
+    --linear-1-24: linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.24) 0%,
+      rgba(176, 0, 255, 0.24) 40%,
+      rgba(255, 26, 174, 0.24) 75%,
+      rgba(255, 79, 163, 0.24) 100%
+    );
+
+    --gradient-cta: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+
+    --white: #ffffff;
+
+    --text-primary: #e6e8f2;
+
+    --text-secondary: #a7aec1;
+
+    --text-inverse: #0f1117;
+
+    --color-bt: #565b6b;
+
+    --card-bg: #1c2230;
+
+    --live-green: #34a853;
+
+    --tag-bg: #ffffffc2;
+
+    --scrollbar-thumb-color: #ffffff;
+    --scrollbar-thumb-hover-color: #e5e5e5;
+
+    --brandprimary: #4318ff;
+  }
+
+  .dark {
+    /* Shadcn dark mode variables */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 217 91% 60%;
+
+    /* Adjust shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6);
+
+    --white-linear: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.14) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+    --linear-1-24: linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.24) 0%,
+      rgba(176, 0, 255, 0.24) 40%,
+      rgba(255, 26, 174, 0.24) 75%,
+      rgba(255, 79, 163, 0.24) 100%
+    );
+
+    --linear-1-17: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.17) 0%,
+      rgba(0, 0, 0, 0.17) 100%
+    );
+
+    --linear-1-5: linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.05) 0%,
+      rgba(176, 0, 255, 0.05) 40%,
+      rgba(255, 26, 174, 0.05) 75%,
+      rgba(255, 79, 163, 0.05) 100%
+    );
+
+    --linear-1-14: linear-gradient(
+      92deg,
+      rgba(106, 71, 255, 0.14) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+
+    --surface-fill: var(--linear-1);
+    --surface-bg: hsl(240, 10%, 3.9%);
+
+    --tag-bg: #1c2230c7;
+
+    --scrollbar-thumb-color: #0b0b23;
+    --scrollbar-thumb-hover-color: #161640;
+  }
+
+  /* Gradient bottom divider line */
+  .gradient-divider-bottom {
+    position: relative;
+  }
+
+  .gradient-divider-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.4px; /* Added 0.4px to show border on mac. 0.3 is not visible border on mac. */
+    border: none !important;
+    background: linear-gradient(
+      90deg,
+      #6a3cff 0%,
+      #b000ff 40%,
+      #ff1aae 75%,
+      #ff4fa3 100%
+    ) !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Tablet+ CTA gradient */
+    --gradient-cta: linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.66) 0%,
+      rgba(176, 0, 255, 0.66) 40%,
+      rgba(255, 26, 174, 0.66) 75%,
+      rgba(255, 79, 163, 0.66) 100%
+    );
+
+    /* Tablet/h1 */
+    --h1-size: 28px;
+    --h1-line-height: 114.286%;
+
+    /* Tablet/h2 */
+    --h2-size: 22px;
+    --h2-line-height: 127.273%;
+
+    /* Tablet/h3 */
+    /* Same as mobile h3 */
+
+    /* Tablet/h4 */
+    /* Same as mobile h4 */
+
+    /* Tablet/card heading */
+    --card-heading-size: 18px;
+    --card-heading-line-height: 133.333%;
+
+    /* Tablet/Body 0 */
+    --body-not-size: 16px;
+    --body-not-line-height: 137.5%;
+
+    /* Tablet/Body (b) */
+    --body-b-size: 16px;
+    --body-b-line-height: 137.5%;
+
+    /* Tablet/Body (m) */
+    /* Same as mobile Body (m) */
+
+    /* Tablet/CTA */
+    /* Same as mobile CTA */
+
+    /* Tablet/Body 2(m) */
+    /* Same as mobile Body 2(m) */
+
+    /* Tablet/Body 3(sb) */
+    /* Same as mobile Body 3(sb) */
+
+    /* Tablet/Hint Text */
+    /* Same as mobile Hint Text */
+
+    /* ---------------------- landing page typography (Tablet) ------------- */
+
+    /* Landing heading */
+    --landing-heading-size: 68px;
+    --landing-heading-line-height: 105%;
+
+    /* Landing heading 3 */
+    --landing-heading3-size: 33px;
+
+    /* Landing section heading */
+    --landing-section-heading-size: 44px;
+
+    /* Landing Section heading2 */
+    --landing-section-heading2-size: 18px;
+
+    /* landing Timer text */
+    --landing-timer-size: 44px;
+    --landing-timer-line-height: 48px;
+
+    /* Landing Signup text */
+    --landing-signup-size: 28px;
+
+    /* Landing card heading */
+    --landing-card-heading-size: 24px;
+
+    /* Landing section sub heading */
+    --landing-section-sub-heading-size: 16px;
+
+    /* Landing questions */
+    --landing-questions-size: 18px;
+
+    /* landing cta */
+    --landing-cta-size: 18px;
+
+    /* landing eyebrow */
+    --landing-eyebrow-size: 16px;
+    --landing-eyebrow-letter-spacing: 2px;
+
+    /* landing body 4 */
+    --landing-body4-size: 16px;
+
+    /* landing body 3 */
+    --landing-body3-size: 14px;
+
+    /* landing body */
+    --landing-body-size: 14px;
+
+    /* landing body-2 */
+    --landing-body2-size: 13px;
+
+    /* Landing info text */
+    --landing-info-text-size: 11px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    /* Desktop/h1 */
+    --h1-size: 32px;
+    --h1-line-height: 131.25%;
+    --h1-letter-spacing: -0.64px;
+
+    /* Desktop/h2 */
+    --h2-size: 24px;
+    --h2-line-height: 175%;
+    --h2-letter-spacing: -0.48px;
+
+    /* Desktop/h3 */
+    --h3-size: 20px;
+    --h3-line-height: 120%;
+    --h3-letter-spacing: -0.4px;
+
+    /* Desktop/h4 */
+    --h4-size: 20px;
+    --h4-line-height: 210%;
+    --h4-letter-spacing: -0.4px;
+
+    /* Desktop/card heading */
+    --card-heading-size: 18px;
+    --card-heading-line-height: 166.667%;
+    --card-heading-letter-spacing: -0.36px;
+
+    /* Desktop/Body 0 */
+    --body-not-size: 18px;
+    --body-not-line-height: 166.667%;
+    --body-not-letter-spacing: -0.36px;
+
+    /* Desktop/Body (b) */
+    --body-b-size: 16px;
+    --body-b-line-height: 187.5%;
+    --body-b-letter-spacing: -0.32px;
+
+    /* Desktop/Body (m) */
+    --body-m-size: 16px;
+    --body-m-line-height: 150%;
+    --body-m-letter-spacing: -0.32px;
+
+    /* Desktop/CTA */
+    --cta-size: 16px;
+    --cta-line-height: 150%;
+    --cta-letter-spacing: -0.16px;
+
+    /* Desktop/Body 2(m) */
+    --body-two-m-size: 14px;
+    --body-two-m-line-height: 120%;
+    --body-two-m-letter-spacing: -0.28px;
+
+    /* Desktop/Body 3(sb) */
+    --body-three-sb-size: 14px;
+    --body-three-sb-weight: 600;
+    --body-three-sb-line-height: 120%;
+    --body-three-sb-letter-spacing: -0.28px;
+
+    /* Desktop/Hint Text */
+    --hint-text-size: 14px;
+    --hint-text-line-height: 142.857%;
+    --hint-text-letter-spacing: -0.28px;
+
+    /* ---------------------- landing page typography------------- */
+
+    /* Landing heading */
+    --landing-heading-font: var(--font-anton);
+    --landing-heading-size: 108px;
+    --landing-heading-font-style: normal;
+    --landing-heading-weight: 400;
+    --landing-heading-line-height: 100%;
+    --landing-heading-letter-spacing: -0.64px;
+    --landing-heading-text-transform: uppercase;
+
+    /* Landing heading 2 */
+    --landing-heading2-font: var(--font-anton);
+    --landing-heading2-size: 26px;
+    --landing-heading2-font-style: normal;
+    --landing-heading2-weight: 400;
+    --landing-heading2-line-height: 110%;
+    --landing-heading2-text-transform: uppercase;
+
+    /* Landing heading 3 */
+    --landing-heading3-font: var(--font-anton);
+    --landing-heading3-size: 36px;
+    --landing-heading3-font-style: normal;
+    --landing-heading3-weight: 400;
+    --landing-heading3-line-height: 110%;
+    --landing-heading3-text-transform: uppercase;
+
+    /* Landing section heading */
+    --landing-section-heading-font: var(--font-anton);
+    --landing-section-heading-size: 64px;
+    --landing-section-heading-font-style: normal;
+    --landing-section-heading-weight: 400;
+    --landing-section-heading-line-height: 110%;
+    --landing-section-heading-text-transform: uppercase;
+
+    /*  Landing Section heading2 */
+    --landing-section-heading2-font: var(--font);
+    --landing-section-heading2-size: 24px;
+    --landing-section-heading2-font-style: normal;
+    --landing-section-heading2-weight: 600;
+    --landing-section-heading2-line-height: 16px;
+    --landing-section-heading2-letter-spacing: 1.2px;
+    --landing-section-heading2-text-transform: uppercase;
+
+    /* landing Timer text */
+    --landing-timer-font: var(--font);
+    --landing-timer-size: 53.25px;
+    --landing-timer-font-style: normal;
+    --landing-timer-weight: 900;
+    --landing-timer-line-height: 53.25px;
+
+    /* Landing Signup text  */
+    --landing-signup-font: var(--font-anton);
+    --landing-signup-size: 36px;
+    --landing-signup-font-style: normal;
+    --landing-signup-weight: 400;
+    --landing-signup-line-height: 110%;
+    --landing-signup-text-transform: uppercase;
+
+    /* Landing card heading */
+    --landing-card-heading-font: var(--font-anton);
+    --landing-card-heading-size: 32px;
+    --landing-card-heading-font-style: normal;
+    --landing-card-heading-weight: 400;
+    --landing-card-heading-line-height: 140%;
+    --landin-card-heading-text-transform: uppercase;
+
+    /* landing subtext */
+    --landing-subtext-font: var(--font);
+    --landing-subtext-size: 24px;
+    --landing-subtext-font-style: normal;
+    --landing-subtext-weight: 600;
+    --landing-subtext-line-height: 110%;
+
+    /* Landing section sub heading  */
+    --landing-section-sub-heading-font: var(--font);
+    --landing-section-sub-heading-size: 20px;
+    --landing-section-sub-heading-font-style: normal;
+    --landing-section-sub-heading-weight: 600;
+    --landing-section-sub-heading-line-height: 110%;
+    --landing-section-sub-heading-text-transform: uppercase;
+
+    /* Landing questions  */
+    --landing-questions-font: var(--font);
+    --landing-questions-size: 20px;
+    --landing-questions-font-style: normal;
+    --landing-questions-weight: 600;
+    --landing-questions-line-height: 28px;
+
+    /* landing cta */
+    --landing-cta-font: var(--font-anton);
+    --landing-cta-size: 20px;
+    --landing-cta-font-style: normal;
+    --landing-cta-weight: 400;
+    --landing-cta-line-height: 48px;
+
+    /* landing eyebrow */
+    --landing-eyebrow-font: var(--font);
+    --landing-eyebrow-size: 20px;
+    --landing-eyebrow-font-style: normal;
+    --landing-eyebrow-weight: 600;
+    --landing-eyebrow-line-height: 110%;
+    --landing-eyebrow-letter-spacing: 3px;
+    --landing-eyebrow-text-transform: uppercase;
+
+    /* landing body 4 */
+    --landing-body4-font: var(--font);
+    --landing-body4-size: 18px;
+    --landing-body4-font-style: normal;
+    --landing-body4-weight: 500;
+    --landing-body4-line-height: 24px;
+
+    /* landing body 3 */
+    --landing-body3-font: var(--font);
+    --landing-body3-size: 16px;
+    --landing-body3-font-style: normal;
+    --landing-body3-weight: 500;
+    --landing-body3-line-height: 140%;
+
+    /* landing body */
+    --landing-body-font: var(--font);
+    --landing-body-size: 16px;
+    --landing-body-font-style: normal;
+    --landing-body-weight: 500;
+    --landing-body-line-height: 110%;
+
+    /* landing body-2 */
+    --landing-body2-font: var(--font);
+    --landing-body2-size: 14px;
+    --landing-body2-font-style: normal;
+    --landing-body2-weight: 500;
+    --landing-body2-line-height: 20px;
+    --landing-body2-letter-spacing: 4.2px;
+    --landing-body2-text-transform: uppercase;
+
+    /* Landing info text */
+    --landing-info-text-size: 12px;
+    --landing-info-text-line-height: 16px;
+    --landing-info-text-letter-spacing: -0.6px;
+  }
+}
+
+/* ================= DM Sans utility classes ================= */
+
+@utility font-dm-sans-400 {
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+@utility font-dm-sans-500 {
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+@utility font-dm-sans-600 {
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+@utility font-dm-sans-700 {
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+/* ================= Anton utility classes ================= */
+
+@utility font-anton-400 {
+  font-family: var(--font-anton);
+  font-weight: 400;
+}
+
+/* ================= Londrina Sketch utility classes ================= */
+
+@utility font-londrina-sketch-400 {
+  font-family: var(--font-londrina-sketch);
+  font-weight: 400;
+}
+
+/* ================= DM Sans Typography Utilities ================= */
+
+@utility typo-heading {
+  font-family: var(--h1-font);
+  font-size: var(--h1-size);
+  font-style: var(--h1-font-style);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing, normal);
+}
+
+@utility typo-heading2 {
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
+  font-style: var(--h2-font-style);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-spacing, normal);
+}
+
+@utility typo-heading3 {
+  font-family: var(--h3-font);
+  font-size: var(--h3-size);
+  font-style: var(--h3-font-style);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-spacing, normal);
+}
+
+@utility typo-heading4 {
+  font-family: var(--h4-font);
+  font-size: var(--h4-size);
+  font-style: var(--h4-font-style);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing, normal);
+}
+
+@utility typo-card-heading {
+  font-family: var(--card-heading-font);
+  font-size: var(--card-heading-size);
+  font-style: var(--card-heading-font-style);
+  font-weight: var(--card-heading-weight);
+  line-height: var(--card-heading-line-height);
+  letter-spacing: var(--card-heading-letter-spacing, normal);
+}
+
+@utility typo-body-not {
+  font-family: var(--body-not-font);
+  font-size: var(--body-not-size);
+  font-style: var(--body-not-font-style);
+  font-weight: var(--body-not-weight);
+  line-height: var(--body-not-line-height);
+  letter-spacing: var(--body-not-letter-spacing, normal);
+}
+
+@utility typo-body-b {
+  font-family: var(--body-b-font);
+  font-size: var(--body-b-size);
+  font-style: var(--body-b-font-style);
+  font-weight: var(--body-b-weight);
+  line-height: var(--body-b-line-height);
+  letter-spacing: var(--body-b-letter-spacing, normal);
+}
+
+@utility typo-body-m {
+  font-family: var(--body-m-font);
+  font-size: var(--body-m-size);
+  font-style: var(--body-m-font-style);
+  font-weight: var(--body-m-weight);
+  line-height: var(--body-m-line-height);
+  letter-spacing: var(--body-m-letter-spacing, normal);
+}
+
+@utility typo-cta-text {
+  font-family: var(--cta-font);
+  font-size: var(--cta-size);
+  font-style: var(--cta-font-style);
+  font-weight: var(--cta-weight);
+  line-height: var(--cta-line-height);
+  letter-spacing: var(--cta-letter-spacing, normal);
+}
+
+@utility typo-body-two-m {
+  font-family: var(--body-two-m-font);
+  font-size: var(--body-two-m-size);
+  font-style: var(--body-two-m-font-style);
+  font-weight: var(--body-two-m-weight);
+  line-height: var(--body-two-m-line-height);
+  letter-spacing: var(--body-two-m-letter-spacing, normal);
+}
+
+@utility typo-body-three-sb {
+  font-family: var(--body-three-sb-font);
+  font-size: var(--body-three-sb-size);
+  font-style: var(--body-three-sb-font-style);
+  font-weight: var(--body-three-sb-weight);
+  line-height: var(--body-three-sb-line-height);
+  letter-spacing: var(--body-three-sb-letter-spacing, normal);
+}
+
+@utility typo-hint-text {
+  font-family: var(--hint-text-font);
+  font-size: var(--hint-text-size);
+  font-style: var(--hint-text-font-style);
+  font-weight: var(--hint-text-weight);
+  line-height: var(--hint-text-line-height);
+  letter-spacing: var(--hint-text-letter-spacing, normal);
+}
+
+/* ===================== TYPOGRAPHY FOR LANDING PAGE =========================== */
+
+@utility typo-landing-heading {
+  font-family: var(--landing-heading-font);
+  font-size: var(--landing-heading-size);
+  font-style: var(--landing-heading-font-style);
+  font-weight: var(--landing-heading-weight);
+  line-height: var(--landing-heading-line-height);
+  letter-spacing: var(--landing-heading-letter-spacing, normal);
+}
+
+@utility typo-landing-heading2 {
+  font-family: var(--landing-heading2-font);
+  font-size: var(--landing-heading2-size);
+  font-style: var(--landing-heading2-font-style);
+  font-weight: var(--landing-heading2-weight);
+  line-height: var(--landing-heading2-line-height);
+  letter-spacing: var(--landing-heading2-letter-spacing, normal);
+}
+
+@utility typo-landing-heading3 {
+  font-family: var(--landing-heading3-font);
+  font-size: var(--landing-heading3-size);
+  font-style: var(--landing-heading3-font-style);
+  font-weight: var(--landing-heading3-weight);
+  line-height: var(--landing-heading3-line-height);
+  letter-spacing: var(--landing-heading3-letter-spacing, normal);
+}
+
+@utility typo-landing-section-heading {
+  font-family: var(--landing-section-heading-font);
+  font-size: var(--landing-section-heading-size);
+  font-style: var(--landing-section-heading-font-style);
+  font-weight: var(--landing-section-heading-weight);
+  line-height: var(--landing-section-heading-line-height);
+  letter-spacing: var(--landing-section-heading-letter-spacing, normal);
+}
+
+@utility typo-landing-section-heading2 {
+  font-family: var(--landing-section-heading2-font);
+  font-size: var(--landing-section-heading2-size);
+  font-style: var(--landing-section-heading2-font-style);
+  font-weight: var(--landing-section-heading2-weight);
+  line-height: var(--landing-section-heading2-line-height);
+  letter-spacing: var(--landing-section-heading2-letter-spacing, normal);
+}
+
+@utility typo-landing-timer {
+  font-family: var(--landing-timer-font);
+  font-size: var(--landing-timer-size);
+  font-style: var(--landing-timer-font-style);
+  font-weight: var(--landing-timer-weight);
+  line-height: var(--landing-timer-line-height);
+  letter-spacing: var(--landing-timer-letter-spacing, normal);
+}
+
+@utility typo-landing-signup {
+  font-family: var(--landing-signup-font);
+  font-size: var(--landing-signup-size);
+  font-style: var(--landing-signup-font-style);
+  font-weight: var(--landing-signup-weight);
+  line-height: var(--landing-signup-line-height);
+  letter-spacing: var(--landing-signup-letter-spacing, normal);
+}
+
+@utility typo-landing-card-heading {
+  font-family: var(--landing-card-heading-font);
+  font-size: var(--landing-card-heading-size);
+  font-style: var(--landing-card-heading-font-style);
+  font-weight: var(--landing-card-heading-weight);
+  line-height: var(--landing-card-heading-line-height);
+  letter-spacing: var(--landin-card-heading-letter-spacing, normal);
+}
+
+@utility typo-landing-subtext {
+  font-family: var(--landing-subtext-font);
+  font-size: var(--landing-subtext-size);
+  font-style: var(--landing-subtext-font-style);
+  font-weight: var(--landing-subtext-weight);
+  line-height: var(--landing-subtext-line-height);
+  letter-spacing: var(--landing-subtext-letter-spacing, normal);
+}
+
+@utility typo-landing-section-sub-heading {
+  font-family: var(--landing-section-sub-heading-font);
+  font-size: var(--landing-section-sub-heading-size);
+  font-style: var(--landing-section-sub-heading-font-style);
+  font-weight: var(--landing-section-sub-heading-weight);
+  line-height: var(--landing-section-sub-heading-line-height);
+  letter-spacing: var(--landing-section-sub-heading-letter-spacing, normal);
+}
+
+@utility typo-landing-questions {
+  font-family: var(--landing-questions-font);
+  font-size: var(--landing-questions-size);
+  font-style: var(--landing-questions-font-style);
+  font-weight: var(--landing-questions-weight);
+  line-height: var(--landing-questions-line-height);
+  letter-spacing: var(--landing-questions-letter-spacing, normal);
+}
+
+@utility typo-landing-cta {
+  font-family: var(--landing-cta-font);
+  font-size: var(--landing-cta-size);
+  font-style: var(--landing-cta-font-style);
+  font-weight: var(--landing-cta-weight);
+  line-height: var(--landing-cta-line-height);
+  letter-spacing: var(--landing-cta-letter-spacing, normal);
+}
+
+@utility typo-landing-eyebrow {
+  font-family: var(--landing-eyebrow-font);
+  font-size: var(--landing-eyebrow-size);
+  font-style: var(--landing-eyebrow-font-style);
+  font-weight: var(--landing-eyebrow-weight);
+  line-height: var(--landing-eyebrow-line-height);
+  letter-spacing: var(--landing-eyebrow-letter-spacing, normal);
+}
+
+@utility typo-landing-body4 {
+  font-family: var(--landing-body4-font);
+  font-size: var(--landing-body4-size);
+  font-style: var(--landing-body4-font-style);
+  font-weight: var(--landing-body4-weight);
+  line-height: var(--landing-body4-line-height);
+  letter-spacing: var(--landing-body4-letter-spacing, normal);
+}
+
+@utility typo-landing-body3 {
+  font-family: var(--landing-body3-font);
+  font-size: var(--landing-body3-size);
+  font-style: var(--landing-body3-font-style);
+  font-weight: var(--landing-body3-weight);
+  line-height: var(--landing-body3-line-height);
+  letter-spacing: var(--landing-body3-letter-spacing, normal);
+}
+
+@utility typo-landing-body {
+  font-family: var(--landing-body-font);
+  font-size: var(--landing-body-size);
+  font-style: var(--landing-body-font-style);
+  font-weight: var(--landing-body-weight);
+  line-height: var(--landing-body-line-height);
+  letter-spacing: var(--landing-body-letter-spacing, normal);
+}
+
+@utility typo-landing-body2 {
+  font-family: var(--landing-body2-font);
+  font-size: var(--landing-body2-size);
+  font-style: var(--landing-body2-font-style);
+  font-weight: var(--landing-body2-weight);
+  line-height: var(--landing-body2-line-height);
+  letter-spacing: var(--landing-body2-letter-spacing, normal);
+}
+
+@utility typo-landing-info-text {
+  font-family: var(--landing-info-text-font);
+  font-size: var(--landing-info-text-size);
+  font-style: var(--landing-info-text-font-style);
+  font-weight: var(--landing-info-text-weight);
+  line-height: var(--landing-info-text-line-height);
+  letter-spacing: var(--landing-info-text-letter-spacing, normal);
+  text-transform: var(--landing-info-text-text-transform);
+}
+
+/* ================= BACKGROUND UTILITIES ================= */
+
+@utility bgcolor-final-color {
+  background: var(--final-color);
+}
+
+@utility bgcolor-bgsecondary {
+  background-color: var(--bgsecondary);
+}
+
+@utility bgcolor-white-linear {
+  background: var(--white-linear);
+}
+
+@utility bgcolor-linear-1 {
+  background: var(--linear-1);
+}
+
+@utility bgcolor-linear-1-17 {
+  background: var(--linear-1-17);
+}
+
+@utility bgcolor-linear-1-5 {
+  background: var(--linear-1-5);
+}
+
+@utility bgcolor-linear-1-14 {
+  background: var(--linear-1-14);
+}
+
+@utility bgcolor-linear-1-24 {
+  background: var(--linear-1-24);
+}
+
+@utility bgcolor-gradient-cta {
+  background: var(--gradient-cta);
+}
+
+@utility bgcolor-white {
+  background-color: var(--white);
+}
+
+@utility bgcolor-text-primary {
+  background-color: var(--text-primary);
+}
+
+@utility bgcolor-text-secondary {
+  background-color: var(--text-secondary);
+}
+
+@utility bgcolor-text-inverse {
+  background-color: var(--text-inverse);
+}
+
+@utility bgcolor-color-bt {
+  background-color: var(--color-bt);
+}
+
+@utility bgcolor-card-bg {
+  background-color: var(--card-bg);
+}
+
+@utility bgcolor-live-green {
+  background-color: var(--live-green);
+}
+
+@utility bgcolor-brandprimary {
+  background-color: var(--brandprimary);
+}
+
+/* ================= TEXT COLOR UTILITIES ================= */
+
+@utility textcolor-final-color {
+  background: var(--final-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-bgsecondary {
+  color: var(--bgsecondary);
+}
+
+@utility textcolor-white-linear {
+  background: var(--white-linear);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-linear-1 {
+  background: var(--linear-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-linear-1-17 {
+  background: var(--linear-1-17);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-linear-1-5 {
+  background: var(--linear-1-5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-linear-1-14 {
+  background: var(--linear-1-14);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility textcolor-white {
+  color: var(--white);
+}
+
+@utility textcolor-text-primary {
+  color: var(--text-primary);
+}
+
+@utility textcolor-text-secondary {
+  color: var(--text-secondary);
+}
+
+@utility textcolor-text-inverse {
+  color: var(--text-inverse);
+}
+
+@utility textcolor-color-bt {
+  color: var(--color-bt);
+}
+
+@utility textcolor-card-bg {
+  color: var(--card-bg);
+}
+
+@utility textcolor-live-green {
+  color: var(--live-green);
+}
+
+@utility textcolor-brandprimary {
+  color: var(--brandprimary);
+}
+
+/* ================= BORDER COLOR UTILITIES ================= */
+
+@utility bordercolor-bgsecondary {
+  border-color: var(--bgsecondary);
+}
+
+@utility bordercolor-white {
+  border-color: var(--white);
+}
+
+@utility bordercolor-text-primary {
+  border-color: var(--text-primary);
+}
+
+@utility bordercolor-text-secondary {
+  border-color: var(--text-secondary);
+}
+
+@utility bordercolor-text-inverse {
+  border-color: var(--text-inverse);
+}
+
+@utility bordercolor-color-bt {
+  border-color: var(--color-bt);
+}
+
+@utility bordercolor-card-bg {
+  border-color: var(--card-bg);
+}
+
+@utility bordercolor-live-green {
+  border-color: var(--live-green);
+}
+
+@utility bordercolor-brandprimary {
+  border-color: var(--brandprimary);
+}
+
+/* =================  GRADIENT BORDER UTILITIES ================= */
+
+/*
+ * GRADIENT BORDER + AUTO BG (light/dark)
+ * Use on: inputs, search bars, form fields
+ * Light bg: subtle purple→white tint | Dark bg: subtle purple→black tint
+ * Usage: className="gradient-border-final rounded-[8px]"
+ */
+.gradient-border-final,
+.gradient-border-final.gradient-border-final {
+  border: 0.3px solid transparent !important;
+  background-image:
+    var(--surface-fill), linear-gradient(var(--surface-bg), var(--surface-bg)),
+    linear-gradient(90deg, #6a3cff 0%, #b000ff 40%, #ff1aae 75%, #ff4fa3 100%);
+  background-origin: padding-box, border-box, border-box;
+  background-clip: padding-box, padding-box, border-box;
+}
+
+/*
+ * GRADIENT BORDER — AVATAR (ring)
+ * Flexbox-centered gradient circle. Set explicit size on this element.
+ */
+.gradient-border-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(
+    135deg,
+    #6a3cff 0%,
+    #b000ff 40%,
+    #ff1aae 75%,
+    #ff4fa3 100%
+  );
+}
+
+/*
+ * GRADIENT BORDER + AUTO BG (light/dark) — same as above, cleaner alias
+ * Use on: cards, panels, containers that need themed background + gradient border
+ * Light bg: subtle purple→white tint | Dark bg: subtle purple→black tint
+ * Usage: className="gradient-border-bg rounded-[12px]"
+ */
+.gradient-border-bg {
+  border: 0.3px solid transparent !important;
+  background-image:
+    var(--surface-fill), linear-gradient(var(--surface-bg), var(--surface-bg)),
+    linear-gradient(90deg, #6a3cff 0%, #b000ff 40%, #ff1aae 75%, #ff4fa3 100%);
+  background-origin: padding-box, border-box, border-box;
+  background-clip: padding-box, padding-box, border-box;
+}
+
+/*
+ * GRADIENT BORDER ONLY — inside is fully transparent
+ * Use on: modals, dropdowns, tooltips, cards sitting on colored/image backgrounds
+ * The component's own background shows through — no tint applied
+ * Usage: className="gradient-border-only-with-fix-bg rounded-[8px]"
+ */
+.gradient-border-only-with-fix-bg {
+  border: 0.3px solid transparent !important;
+  background-image:
+    linear-gradient(var(--surface-bg), var(--surface-bg)),
+    linear-gradient(90deg, #6a3cff 0%, #b000ff 40%, #ff1aae 75%, #ff4fa3 100%);
+  background-origin: border-box, border-box;
+  background-clip: padding-box, border-box;
+}
+
+.gradient-border-dashed {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' stroke='url(%23g)' stroke-width='1.5' stroke-dasharray='6%2c4'/%3e%3cdefs%3e%3clinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3e%3cstop offset='0%25' stop-color='%236a3cff'/%3e%3cstop offset='40%25' stop-color='%23b000ff'/%3e%3cstop offset='75%25' stop-color='%23ff1aae'/%3e%3cstop offset='100%25' stop-color='%23ff4fa3'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  border-radius: 16px;
+}
+
+.dropdown-border {
+  border: 0.3px solid transparent !important;
+  border-radius: 0 0 12px 12px;
+  background-image:
+    linear-gradient(var(--surface-bg), var(--surface-bg)),
+    linear-gradient(
+      90deg,
+      rgba(106, 60, 255, 0.44) 0%,
+      rgba(176, 0, 255, 0.44) 40%,
+      rgba(255, 26, 174, 0.44) 75%,
+      rgba(255, 79, 163, 0.44) 100%
+    );
+  background-origin: border-box, border-box;
+  background-clip: padding-box, border-box;
+}
+
+/*
+ * GRADIENT BORDER RING — only a gradient border, fully transparent inside
+ * Shows parent background through. No fill, no tint.
+ * Default width: 0.3px. Override with [--gb-width:1px] in Tailwind.
+ * Usage: className="gradient-border-ring rounded-[8px]"
+ * Custom width: className="gradient-border-ring [--gb-width:1px] rounded-[8px]"
+ */
+.gradient-border-ring {
+  position: relative;
+}
+
+.gradient-border-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--gb-width, 0.3px) solid transparent;
+  background: linear-gradient(
+      90deg,
+      #6a3cff 0%,
+      #b000ff 40%,
+      #ff1aae 75%,
+      #ff4fa3 100%
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/*
+ * GRADIENT BORDER RING — INPUT WRAPPER (transparent center)
+ * Use this on a wrapper <div> around native inputs/selects.
+ * Keeps gradient only on border and defaults center to transparent.
+ * Tailwind bg-* classes on the wrapper still work (they sit above the ring).
+ * Usage:
+ *   <div className="gradient-border-ring-input rounded-[8px] bg-[#FFFFFF0D]">
+ *     <input ... />
+ *   </div>
+ */
+.gradient-border-ring-input {
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+}
+
+.gradient-border-ring-input::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--gb-width, 0.3px) solid transparent;
+  background: linear-gradient(
+      90deg,
+      #6a3cff 0%,
+      #b000ff 40%,
+      #ff1aae 75%,
+      #ff4fa3 100%
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/*
+ * GRADIENT BORDER RING 2 — same as gradient-border-ring but at 50% opacity
+ * Usage: className="gradient-border-ring2 rounded-[8px]"
+ * Custom width: className="gradient-border-ring2 [--gb-width:1px] rounded-[8px]"
+ */
+.gradient-border-ring2 {
+  position: relative;
+}
+
+.gradient-border-ring2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--gb-width, 0.3px) solid transparent;
+  background: linear-gradient(
+      90deg,
+      #6a3cff 0%,
+      #b000ff 40%,
+      #ff1aae 75%,
+      #ff4fa3 100%
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/*
+ * GRADIENT LINE — a horizontal gradient line
+ * Default height: 1px. Override with [--gl-height:0.5px] in Tailwind.
+ * Usage: className="gradient-line w-full"
+ * Custom height: className="gradient-line [--gl-height:0.3px] w-full"
+ */
+.gradient-line {
+  height: var(--gl-height, 1px);
+  background: linear-gradient(
+    90deg,
+    #6a3cff 0%,
+    #b000ff 40%,
+    #ff1aae 75%,
+    #ff4fa3 100%
+  );
+}
+
+/*
+ * GRADIENT DASHED LINE (MASK)
+ * Draws a solid gradient, then uses a repeating mask to cut out the gaps!
+ */
+.gradient-dashed-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #6a3cff 0%,
+    #b000ff 40%,
+    #ff1aae 75%,
+    #ff4fa3 100%
+  );
+  /* This creates the dashes: 8px solid line, followed by an 8px transparent gap */
+  -webkit-mask-image: repeating-linear-gradient(
+    to right,
+    black 0px,
+    black 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  mask-image: repeating-linear-gradient(
+    to right,
+    black 0px,
+    black 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/*
+ * LEADERBOARD CARD — purple glow at bottom
+ * Usage: className="leader-card-glow"
+ */
+@utility leader-card-glow {
+  background: linear-gradient(
+    180deg,
+    rgba(106, 60, 255, 0) 0%,
+    rgba(106, 60, 255, 0.18) 60%,
+    rgba(176, 0, 255, 0.13) 100%
+  );
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/*---break---
+ */
+
+:root {
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/*---break---
+ */
+
+.dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/*---break---
+ */
+
+@theme inline {
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbarwidth: none; /* Firefox */
+}
+/* Chrome, Edge, Safari (WebKit/Blink) */
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* IE 10+ and legacy Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+/* ================= THEMED SCROLLBAR ================= */
+
+/* ---------- Firefox ---------- */
+.themed-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) transparent;
+}
+
+/* ---------- Chrome / Edge / Safari (WebKit + Blink) ---------- */
+
+.themed-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.themed-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 9999px;
+}
+
+.themed-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: var(--scrollbar-thumb-color);
+}
+
+.themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-color);
+}
+
+.themed-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* globals.css or a module imported somewhere */
+input[type="date"] {
+  -webkit-appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
