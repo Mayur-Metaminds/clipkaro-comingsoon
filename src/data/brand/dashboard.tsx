@@ -1,16 +1,10 @@
-import { ChartDataPoint } from "@/components/brand/chart/EngagementChart";
-import {
-  LayoutDashboard,
-  CreditCard,
-  Settings,
-  Search,
-  Bell,
-  Moon,
-  Menu,
-  Play,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+export type ChartDataPoint = {
+  name: string;
+  likes: number;
+  shares: number;
+  saves: number;
+  comments: number;
+};
 import { Megaphone, Eye, Man } from "../../../public/svg/SVG";
 
 // --- MOCK DATA ---

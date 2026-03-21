@@ -2,7 +2,7 @@ import { useId } from "react";
 
 export const MoonSvg = ({
   className,
-  fill,
+  fill: _fill,
 }: {
   className?: string;
   fill?: string;
@@ -33,7 +33,7 @@ export const MoonSvg = ({
 
 export const NotificationSvg = ({
   className,
-  fill,
+  fill: _fill2,
 }: {
   className?: string;
   fill?: string;
@@ -64,7 +64,7 @@ export const NotificationSvg = ({
 
 export const SunSvg = ({
   className,
-  fill,
+  fill: _fill3,
 }: {
   className?: string;
   fill?: string;
@@ -2081,7 +2081,7 @@ export const Verified = ({
 
 export const Ruppees = ({
   className,
-  fill,
+  fill: _fill4,
 }: {
   className?: string;
   fill?: string;
@@ -2122,7 +2122,7 @@ export const Ruppees = ({
 
 export const Video2 = ({
   className,
-  fill,
+  fill: _fill5,
 }: {
   className?: string;
   fill?: string;
@@ -2166,7 +2166,7 @@ export const Video2 = ({
 
 export const Speaker = ({
   className,
-  fill,
+  fill: _fill6,
 }: {
   className?: string;
   fill?: string;

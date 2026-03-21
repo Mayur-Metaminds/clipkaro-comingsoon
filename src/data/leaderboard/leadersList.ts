@@ -116,10 +116,12 @@ export const leadersTable: LeaderRow[] = [
   },
 ];
 
-export default {
+const leaderboardData = {
   topCreators,
   leadersTable,
 };
+
+export default leaderboardData;
 
 export const creators = [
   {
