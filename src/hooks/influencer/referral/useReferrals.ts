@@ -1,5 +1,5 @@
-import { fetchReferrals } from "@/services/influencer/referral/referral.service";
-import { ReferralResponse } from "@/types/influencer/referral";
+import { fetchReferrals } from "../../../services/influencer/referral/referral.service";
+import { ReferralResponse } from "../../../types/influencer/referral";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useReferrals = (

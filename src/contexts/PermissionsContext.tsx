@@ -7,8 +7,8 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
-import { permissionService } from "@/services/permission.service";
-import type { PermissionString } from "@/types/permissions";
+import { permissionService } from "../services/permission.service";
+import type { PermissionString } from "../types/permissions";
 
 /**
  * PermissionsContext

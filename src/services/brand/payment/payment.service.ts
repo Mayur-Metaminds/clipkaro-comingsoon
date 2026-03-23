@@ -2,8 +2,8 @@ import {
   InvoiceApiResponse,
   CreatorApiResponse,
   Creator,
-} from "@/types/brand/payment";
-import { invoicesData } from "@/data/brand/payment/payment";
+} from "../../../types/brand/payment";
+import { invoicesData } from "../../../data/brand/payment/payment";
 
 export const fetchInvoices = async (
   page: number,

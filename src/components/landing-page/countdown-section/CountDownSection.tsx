@@ -51,35 +51,18 @@ const CountdownUnit: React.FC<CountdownUnitProps> = ({ value, label }) => {
 };
 
 const CountDownSection = () => {
-  // State to hold the time left
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => {
-    // Set a target date 5 days, 12 hours, 45 minutes, 8 seconds from now
-    const initialTargetDate = new Date();
-    initialTargetDate.setDate(initialTargetDate.getDate() + 5);
-    initialTargetDate.setHours(initialTargetDate.getHours() + 12);
-    initialTargetDate.setMinutes(initialTargetDate.getMinutes() + 45);
-    initialTargetDate.setSeconds(initialTargetDate.getSeconds() + 8);
-    return calculateTimeLeft(initialTargetDate);
-  });
+  // Target date: April 30, 2026 at midnight IST (UTC+5:30)
+  const targetDate = new Date("2026-04-30T00:00:00+05:30");
 
-  // UseEffect hook to run the countdown timer
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
+    calculateTimeLeft(targetDate)
+  );
+
   useEffect(() => {
-    // Re-create the target date based on the current time left state.
-    // In a real app, this target date would be fixed (e.g., from an API or env var)
-    const timerTargetDate = new Date();
-    timerTargetDate.setSeconds(
-      timerTargetDate.getSeconds() +
-        timeLeft.days * 24 * 60 * 60 +
-        timeLeft.hours * 60 * 60 +
-        timeLeft.minutes * 60 +
-        timeLeft.seconds
-    );
-
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(timerTargetDate));
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
-    // Clean up the timer when the component unmounts
     return () => clearInterval(timer);
   }, []);
 

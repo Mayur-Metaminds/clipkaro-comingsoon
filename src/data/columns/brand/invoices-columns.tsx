@@ -1,8 +1,8 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { Download } from "lucide-react";
-import { GradientButton } from "@/components/common/GradientButton";
-import { Invoice } from "@/types/brand/payment";
+import { GradientButton } from "../../../components/common/GradientButton";
+import { Invoice } from "../../../types/brand/payment";
 
 export const invoicesColumns: ColumnDef<Invoice>[] = [
   {

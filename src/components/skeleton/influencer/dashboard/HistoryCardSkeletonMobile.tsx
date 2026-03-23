@@ -1,6 +1,6 @@
 "use client";
 
-import { CardWrapper } from "@/components/influencer/common/CardWrapper";
+import { CardWrapper } from "../../../influencer/common/CardWrapper";
 
 export default function HistoryCardSkeletonMobile() {
   return (

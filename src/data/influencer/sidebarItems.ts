@@ -1,6 +1,6 @@
 "use client";
 
-import { SidebarItemType } from "@/types/influencer/sidebar";
+import { SidebarItemType } from "../../types/influencer/sidebar";
 
 // This is for an influencer dashboard.
 

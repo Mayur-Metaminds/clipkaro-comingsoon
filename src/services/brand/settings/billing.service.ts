@@ -1,4 +1,4 @@
-import { BillingHistoryApiResponse } from "@/types/brand/billing";
+import { BillingHistoryApiResponse } from "../../../types/brand/billing";
 
 export const fetchBillingHistory = async (
   page: number,

@@ -2,7 +2,7 @@ import { Campaign } from "../dashboard/dashboard.service";
 import {
   LeaderboardApiResponse,
   LeaderboardItem,
-} from "@/types/influencer/leaderboard";
+} from "../../../types/influencer/leaderboard";
 
 interface DummyProductResponse {
   products: Campaign[];

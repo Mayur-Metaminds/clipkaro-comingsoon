@@ -1,5 +1,5 @@
-import { fetchCampaignPerformance } from "@/services/brand/dashboard/dashboard.service";
-import { CampaignPerformanceApiResponse } from "@/types/brand/dashboard";
+import { fetchCampaignPerformance } from "../../../services/brand/dashboard/dashboard.service";
+import { CampaignPerformanceApiResponse } from "../../../types/brand/dashboard";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const usePerformance = (limit: number, enabled: boolean = true) => {

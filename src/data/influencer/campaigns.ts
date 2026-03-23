@@ -1,4 +1,4 @@
-import { Campaign } from "@/types/influencer/campaign";
+import { Campaign } from "../../types/influencer/campaign";
 
 export const campaigns: Campaign[] = [
   {

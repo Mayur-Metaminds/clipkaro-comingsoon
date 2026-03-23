@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
-import { initiateOAuthLogin, getEnabledOAuthProviders } from "@/lib/auth/oauth";
+import { Button } from "../../ui/Button";
+import { initiateOAuthLogin, getEnabledOAuthProviders } from "../../../lib/auth/oauth";
 
 interface OAuthButtonsProps {
   isLoading?: boolean;

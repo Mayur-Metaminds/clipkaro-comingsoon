@@ -1,14 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
-import { CookieConsent } from "@/components/features/CookieConsent";
-import { cn } from "@/lib/utils";
-import { defaultMetadata } from "@/config/site";
-import { ToastProvider } from "@/components/providers/ToastProvider";
-import { ErrorBoundary } from "@/components/error/ErrorBoundary";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import { QueryProvider } from "@/components/providers/QueryProvider";
+import "../styles/globals.css";
+import { GoogleAnalytics } from "../components/analytics/GoogleAnalytics";
+import { CookieConsent } from "../components/features/CookieConsent";
+import { cn } from "../lib/utils";
+import { defaultMetadata } from "../config/site";
+import { ToastProvider } from "../components/providers/ToastProvider";
+import { ErrorBoundary } from "../components/error/ErrorBoundary";
+import { AuthProvider } from "../contexts/AuthContext";
+import { ThemeProvider } from "../contexts/ThemeContext";
+import { QueryProvider } from "../components/providers/QueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

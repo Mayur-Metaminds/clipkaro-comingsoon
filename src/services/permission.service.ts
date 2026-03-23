@@ -1,8 +1,8 @@
-import { apiClient } from "@/lib/api/client";
+import { apiClient } from "../lib/api/client";
 import {
   PermissionCheckResponseSchema,
   PermissionsResponseSchema,
-} from "@/lib/validations/auth";
+} from "../lib/validations/auth";
 import type { z } from "zod";
 
 /**

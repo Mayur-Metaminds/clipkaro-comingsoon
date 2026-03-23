@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
-import { featureFlags } from "@/config/features";
+import { Button } from "../../ui/Button";
+import { featureFlags } from "../../../config/features";
 
 interface GoogleButtonProps {
   onClick: () => void;

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { BaseService } from "@/lib/api/BaseService";
-import { apiService } from "@/lib/api";
+import { BaseService } from "../../../lib/api/BaseService";
+import { apiService } from "../../../lib/api";
 
 // --- 1. Sub-Schemas (For complex nested data) ---
 export const GuidelineSchema = z.object({

@@ -1,4 +1,4 @@
-import { ReferralResponse } from "@/types/influencer/referral";
+import { ReferralResponse } from "../../../types/influencer/referral";
 
 export const fetchReferrals = async (
   page: number,

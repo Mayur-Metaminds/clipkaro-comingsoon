@@ -1,7 +1,7 @@
 import {
   fetchHistory,
   HistoryApiResponse,
-} from "@/services/influencer/dashboard/dashboard.service";
+} from "../../../services/influencer/dashboard/dashboard.service";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useHistory = (

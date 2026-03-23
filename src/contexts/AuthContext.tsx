@@ -7,10 +7,10 @@ import type {
   User,
   Session,
   AuthConfig,
-} from "@/types/auth";
-import { authService } from "@/services/auth.service";
-import { PermissionsProvider } from "@/contexts/PermissionsContext";
-import { useToastContext } from "@/components/providers/ToastProvider";
+} from "../types/auth";
+import { authService } from "../services/auth.service";
+import { PermissionsProvider } from "./PermissionsContext";
+import { useToastContext } from "../components/providers/ToastProvider";
 import { useRouter } from "next/navigation";
 
 /**

@@ -1,8 +1,8 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { Download } from "lucide-react";
-import { GradientButton } from "@/components/common/GradientButton";
-import { BillingHistoryItem } from "@/types/brand/billing";
+import { GradientButton } from "../../../components/common/GradientButton";
+import { BillingHistoryItem } from "../../../types/brand/billing";
 
 export const billingHistoryColumns: ColumnDef<BillingHistoryItem>[] = [
   {

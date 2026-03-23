@@ -1,9 +1,9 @@
-import { apiClient } from "@/lib/api";
+import { apiClient } from "../../../lib/api";
 import {
   BrandCampaignApiResponse,
   CampaignPerformanceApiResponse,
-} from "@/types/brand/dashboard";
-import { InfluencerStats } from "@/types/influencer/dashboard";
+} from "../../../types/brand/dashboard";
+import { InfluencerStats } from "../../../types/influencer/dashboard";
 
 export async function fetchInfluencerStats(): Promise<InfluencerStats | null> {
   const { data } = await apiClient.get("/influencer/stats");

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Scissors, Clapperboard } from "lucide-react";
-import { WaitlistSchema } from "@/lib/validations/waitlist";
+import { WaitlistSchema } from "../../../lib/validations/waitlist";
 import WaitlistSuccessModal from "./WaitlistSuccessModal";
 import { fa } from "zod/v4/locales";
 

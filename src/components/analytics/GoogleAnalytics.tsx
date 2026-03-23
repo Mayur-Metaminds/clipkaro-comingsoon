@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { env } from "@/lib/env";
+import { env } from "../../lib/env";
 
 /**
  * Google Analytics component

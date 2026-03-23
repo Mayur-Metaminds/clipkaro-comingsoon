@@ -1,6 +1,6 @@
-import { cn } from "@/lib";
-import { useDebounce } from "@/hooks";
-import { GradientSearchInputProps } from "@/types/common/gradient-search";
+import { cn } from "../../lib";
+import { useDebounce } from "../../hooks";
+import { GradientSearchInputProps } from "../../types/common/gradient-search";
 import { Search, X } from "lucide-react";
 import React, {
   useState,

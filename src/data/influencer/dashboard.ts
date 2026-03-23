@@ -1,4 +1,4 @@
-import { InfluencerStats } from "@/types/influencer/dashboard";
+import { InfluencerStats } from "../../types/influencer/dashboard";
 
 export const influencerStatsMock: InfluencerStats = {
   totalViews: 1900000,

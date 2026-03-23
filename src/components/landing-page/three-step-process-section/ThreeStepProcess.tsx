@@ -2,10 +2,10 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import lightStatsBg from "@/components/landing-page/data/lightStats.png";
-import darkStatsBg from "@/components/landing-page/data/darkStats.png";
-import lightStatsSM from "@/components/landing-page/data/lightStatsSM.png";
-import darkStatsSM from "@/components/landing-page/data/darkStatsSM.png";
+import lightStatsBg from "../data/lightStats.png";
+import darkStatsBg from "../data/darkStats.png";
+import lightStatsSM from "../data/lightStatsSM.png";
+import darkStatsSM from "../data/darkStatsSM.png";
 
 const steps = [
   {

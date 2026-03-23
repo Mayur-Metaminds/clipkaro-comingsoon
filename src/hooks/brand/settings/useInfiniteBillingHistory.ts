@@ -1,5 +1,5 @@
-import { fetchBillingHistory } from "@/services/brand/settings/billing.service";
-import { BillingHistoryApiResponse } from "@/types/brand/billing";
+import { fetchBillingHistory } from "../../../services/brand/settings/billing.service";
+import { BillingHistoryApiResponse } from "../../../types/brand/billing";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const useInfiniteBillingHistory = (

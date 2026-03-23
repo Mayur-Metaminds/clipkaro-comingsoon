@@ -2,16 +2,16 @@
 "use client";
 
 import { useCallback } from "react";
-import { useToastContext } from "@/components/providers/ToastProvider";
+import { useToastContext } from "../components/providers/ToastProvider";
 
 import { AxiosError } from "axios";
-import { errorService } from "@/lib/errorService";
+import { errorService } from "../lib/errorService";
 import {
   ErrorCode,
   ErrorContext,
   ErrorSeverity,
   ErrorWithContext,
-} from "@/types/error";
+} from "../types/error";
 
 export interface UseErrorHandlerOptions {
   showToast?: boolean;

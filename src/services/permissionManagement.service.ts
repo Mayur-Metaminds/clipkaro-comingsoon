@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { apiService } from "@/lib/api/service";
+import { apiService } from "../lib/api/service";
 import {
   Permission,
   PermissionSchema,
@@ -7,7 +7,7 @@ import {
   DenyPermissionDto,
   RevokePermissionDto,
   GrantPresetDto,
-} from "@/types/permission";
+} from "../types/permission";
 
 /**
  * Permission Management Service

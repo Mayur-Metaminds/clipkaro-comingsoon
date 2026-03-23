@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
-import lightFaqBg from "@/components/landing-page/data/lightFaq.png";
-import darkFaqBg from "@/components/landing-page/data/darkFaq.png";
-import lightFaqSM from "@/components/landing-page/data/lightFaqSM.png";
-import darkFaqSM from "@/components/landing-page/data/darkFaqSM.png";
-import smGridleft from "@/components/landing-page/data/smGridleft.svg";
-import smGridright from "@/components/landing-page/data/smGridright.svg";
+import lightFaqBg from "../data/lightFaq.png";
+import darkFaqBg from "../data/darkFaq.png";
+import lightFaqSM from "../data/lightFaqSM.png";
+import darkFaqSM from "../data/darkFaqSM.png";
+import smGridleft from "../data/smGridleft.svg";
+import smGridright from "../data/smGridright.svg";
 
 const faqData = [
   {

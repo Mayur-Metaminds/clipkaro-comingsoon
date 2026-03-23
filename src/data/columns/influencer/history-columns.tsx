@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { HistoryItem } from "@/data/influencer/historyData";
-import { StatusBadge } from "@/components/common/StatusBadge";
+import { HistoryItem } from "../../influencer/historyData";
+import { StatusBadge } from "../../../components/common/StatusBadge";
 
 export const historyColumns: ColumnDef<HistoryItem>[] = [
   { accessorKey: "campaign", header: "Campaign" },

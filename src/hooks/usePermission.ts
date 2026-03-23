@@ -1,7 +1,7 @@
 "use client";
 
-import { usePermissions } from "@/contexts/PermissionsContext";
-import type { PermissionString } from "@/types/permissions";
+import { usePermissions } from "../contexts/PermissionsContext";
+import type { PermissionString } from "../types/permissions";
 
 /**
  * Hook to check user permissions (cached)
@@ -39,4 +39,4 @@ export function usePermission(permission: PermissionString) {
  * Legacy hook - use usePermissions from PermissionsContext instead
  * @deprecated Use `import { usePermissions } from "@/contexts/PermissionsContext"` instead
  */
-export { usePermissions } from "@/contexts/PermissionsContext";
+export { usePermissions } from "../contexts/PermissionsContext";

@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { BaseService, QueryParams } from "@/lib/api/BaseService";
-import { UserSchema, type User } from "@/types/api";
-import { apiService } from "@/lib/api";
+import { BaseService, QueryParams } from "../lib/api/BaseService";
+import { UserSchema, type User } from "../types/api";
+import { apiService } from "../lib/api";
 
 /**
  * User Service

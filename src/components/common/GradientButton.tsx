@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export interface GradientButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {

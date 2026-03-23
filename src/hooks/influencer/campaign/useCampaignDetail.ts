@@ -1,4 +1,4 @@
-import { fetchCampaignBySlug } from "@/services/influencer/campaign/campaign.service";
+import { fetchCampaignBySlug } from "../../../services/influencer/campaign/campaign.service";
 import { useQuery } from "@tanstack/react-query";
 
 export const useCampaignDetail = (slug: string) => {

@@ -1,13 +1,13 @@
 "use client"; // pending server component conversion
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import lightStatsBg from "@/components/landing-page/data/lightStats.png";
-import darkStatsBg from "@/components/landing-page/data/darkStats.png";
-import lightStatsSM from "@/components/landing-page/data/lightStatsSM.png";
-import darkStatsSM from "@/components/landing-page/data/darkStatsSM.png";
-import w1 from "@/components/landing-page/data/w1.png";
-import w2 from "@/components/landing-page/data/w2.png";
-import w3 from "@/components/landing-page/data/w3.png";
+import lightStatsBg from "../data/lightStats.png";
+import darkStatsBg from "../data/darkStats.png";
+import lightStatsSM from "../data/lightStatsSM.png";
+import darkStatsSM from "../data/darkStatsSM.png";
+import w1 from "../data/w1.png";
+import w2 from "../data/w2.png";
+import w3 from "../data/w3.png";
 
 const WhyJoining: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -5,9 +5,9 @@ import {
   ExclamationTriangleIcon,
   ArrowPathIcon,
 } from "@heroicons/react/24/outline";
-import { logger } from "@/lib/logger";
-import { errorService } from "@/lib/errorService";
-import { ErrorCode } from "@/types/error";
+import { logger } from "../../lib/logger";
+import { errorService } from "../../lib/errorService";
+import { ErrorCode } from "../../types/error";
 
 interface Props {
   children: ReactNode;

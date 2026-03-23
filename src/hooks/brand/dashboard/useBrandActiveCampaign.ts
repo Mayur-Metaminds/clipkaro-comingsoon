@@ -1,5 +1,5 @@
-import { fetchBrandCampaigns } from "@/services/brand/dashboard/dashboard.service";
-import { BrandCampaignApiResponse } from "@/types/brand/dashboard";
+import { fetchBrandCampaigns } from "../../../services/brand/dashboard/dashboard.service";
+import { BrandCampaignApiResponse } from "../../../types/brand/dashboard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useBrandActiveCampaign = (

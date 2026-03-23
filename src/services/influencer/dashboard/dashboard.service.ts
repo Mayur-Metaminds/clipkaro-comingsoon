@@ -1,6 +1,6 @@
-import { HistoryItem } from "@/data/influencer/historyData";
-import { apiClient } from "@/lib/api";
-import { InfluencerStats } from "@/types/influencer/dashboard";
+import { HistoryItem } from "../../../data/influencer/historyData";
+import { apiClient } from "../../../lib/api";
+import { InfluencerStats } from "../../../types/influencer/dashboard";
 
 export interface Campaign {
   id: number;

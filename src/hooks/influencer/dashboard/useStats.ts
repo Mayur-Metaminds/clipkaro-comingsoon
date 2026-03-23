@@ -1,4 +1,4 @@
-import { fetchInfluencerStats } from "@/services/influencer/dashboard/dashboard.service";
+import { fetchInfluencerStats } from "../../../services/influencer/dashboard/dashboard.service";
 import { useQuery } from "@tanstack/react-query";
 
 export const useStats = () => {

@@ -1,5 +1,5 @@
-import { fetchCreators } from "@/services/brand/payment/payment.service";
-import { CreatorApiResponse } from "@/types/brand/payment";
+import { fetchCreators } from "../../../services/brand/payment/payment.service";
+import { CreatorApiResponse } from "../../../types/brand/payment";
 import { useQuery } from "@tanstack/react-query";
 
 export const useCreatorsDesktop = (

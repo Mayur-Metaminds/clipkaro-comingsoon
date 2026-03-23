@@ -1,4 +1,4 @@
-import { fetchRanks } from "@/services/influencer/leaderboard/leaderboard.service";
+import { fetchRanks } from "../../../services/influencer/leaderboard/leaderboard.service";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const useInfiniteRanks = (pageSize: number, enabled: boolean = true) => {

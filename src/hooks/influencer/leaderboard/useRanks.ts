@@ -1,5 +1,5 @@
-import { fetchRanks } from "@/services/influencer/leaderboard/leaderboard.service";
-import { LeaderboardApiResponse } from "@/types/influencer/leaderboard";
+import { fetchRanks } from "../../../services/influencer/leaderboard/leaderboard.service";
+import { LeaderboardApiResponse } from "../../../types/influencer/leaderboard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useRanks = (

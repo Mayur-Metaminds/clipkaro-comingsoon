@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useSafeState } from "./useSafeState";
-import { useToastContext } from "@/components/providers/ToastProvider";
-import { ApiError } from "@/lib/api";
+import { useToastContext } from "../components/providers/ToastProvider";
+import { ApiError } from "../lib/api";
 
 /**
  * Async Hook Configuration Options

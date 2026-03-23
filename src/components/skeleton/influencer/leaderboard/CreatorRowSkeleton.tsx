@@ -1,4 +1,4 @@
-import { cn } from "@/lib";
+import { cn } from "../../../../lib";
 
 export function CreatorRowSkeleton({ isLast }: { isLast?: boolean }) {
   return (

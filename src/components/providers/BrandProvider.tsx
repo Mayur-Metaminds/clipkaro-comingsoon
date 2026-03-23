@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { generateBrandCSS } from "@/lib/brandUtils";
+import { generateBrandCSS } from "../../lib/brandUtils";
 
 /**
  * BrandProvider

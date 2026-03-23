@@ -1,8 +1,8 @@
-import { Creator } from "@/types/brand/payment";
+import { Creator } from "../../../types/brand/payment";
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { InstagramSvg, YoutubeSvg } from "../../../../public/svg/SVG";
-import { StatusBadge } from "@/components/common/StatusBadge";
+import { StatusBadge } from "../../../components/common/StatusBadge";
 
 export const creatorsColumns: ColumnDef<Creator>[] = [
   {

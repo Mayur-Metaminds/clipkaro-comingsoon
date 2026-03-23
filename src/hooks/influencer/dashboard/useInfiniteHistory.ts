@@ -1,4 +1,4 @@
-import { fetchHistory } from "@/services/influencer/dashboard/dashboard.service";
+import { fetchHistory } from "../../../services/influencer/dashboard/dashboard.service";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const useInfiniteHistory = (

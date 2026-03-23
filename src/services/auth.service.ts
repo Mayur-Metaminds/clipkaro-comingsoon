@@ -1,5 +1,5 @@
-import { apiClient } from "@/lib/api/client";
-import { env } from "@/lib/env";
+import { apiClient } from "../lib/api/client";
+import { env } from "../lib/env";
 import {
   LoginSchema,
   SignupSchema,
@@ -22,8 +22,8 @@ import {
   type UpdateUserInput,
   type VerifyEmailInput,
   type SendVerificationEmailInput,
-} from "@/lib/validations/auth";
-import { LoginTypes, SignupTypes } from "@/types/auth/auth";
+} from "../lib/validations/auth";
+import { LoginTypes, SignupTypes } from "../types/auth/auth";
 import type { z } from "zod";
 
 /**

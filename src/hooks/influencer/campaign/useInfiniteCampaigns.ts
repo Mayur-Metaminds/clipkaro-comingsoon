@@ -1,4 +1,4 @@
-import { fetchCampaigns } from "@/services/influencer/campaign/campaign.service";
+import { fetchCampaigns } from "../../../services/influencer/campaign/campaign.service";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const useInfiniteCampaigns = (pageSize: number) => {

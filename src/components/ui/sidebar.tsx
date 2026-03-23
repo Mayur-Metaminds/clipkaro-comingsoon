@@ -5,24 +5,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Menu, PanelLeftIcon } from "lucide-react";
 import { Slot } from "radix-ui";
 
-import { useSidebarBreakpoint } from "@/hooks/use-sidebar-breakpoint";
-import { cn } from "@/lib/utils";
+import { useSidebarBreakpoint } from "../../hooks/use-sidebar-breakpoint";
+import { cn } from "../../lib/utils";
 
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "./separator";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { Skeleton } from "@/components/ui/skeleton";
+} from "./sheet";
+import { Skeleton } from "./skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "./tooltip";
 import { Button } from "./Button";
 import { Input } from "./Input";
 

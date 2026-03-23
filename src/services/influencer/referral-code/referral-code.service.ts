@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { BaseService } from "@/lib/api/BaseService";
+import { BaseService } from "../../../lib/api/BaseService";
 // import { apiService } from "@/lib/api";
 
 // --- 1. Schema Definition ---

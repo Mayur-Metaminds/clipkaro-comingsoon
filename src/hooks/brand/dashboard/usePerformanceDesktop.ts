@@ -1,5 +1,5 @@
-import { fetchCampaignPerformance } from "@/services/brand/dashboard/dashboard.service";
-import { CampaignPerformanceApiResponse } from "@/types/brand/dashboard";
+import { fetchCampaignPerformance } from "../../../services/brand/dashboard/dashboard.service";
+import { CampaignPerformanceApiResponse } from "../../../types/brand/dashboard";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const usePerformanceDesktop = (

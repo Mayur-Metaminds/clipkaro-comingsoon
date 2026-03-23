@@ -1,4 +1,4 @@
-import { Invoice } from "@/types/brand/payment";
+import { Invoice } from "../../../types/brand/payment";
 
 export const budgetOverviewData = {
   budgetUsed: 400,

@@ -1,5 +1,5 @@
-import { fetchInvoices } from "@/services/brand/payment/payment.service";
-import { InvoiceApiResponse } from "@/types/brand/payment";
+import { fetchInvoices } from "../../../services/brand/payment/payment.service";
+import { InvoiceApiResponse } from "../../../types/brand/payment";
 import { useQuery } from "@tanstack/react-query";
 
 export const useInvoicesDesktop = (

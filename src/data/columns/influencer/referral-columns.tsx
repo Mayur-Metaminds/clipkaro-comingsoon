@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { StatusBadge } from "@/components/common/StatusBadge";
-import { ReferralItem } from "@/types/influencer/referral";
-import { formatValue } from "@/utils/formatValue";
+import { StatusBadge } from "../../../components/common/StatusBadge";
+import { ReferralItem } from "../../../types/influencer/referral";
+import { formatValue } from "../../../utils/formatValue";
 import { InstagramSvg, YoutubeSvg } from "../../../../public/svg/SVG";
 
 export const referralColumns: ColumnDef<ReferralItem>[] = [
