@@ -6,11 +6,11 @@ import type { Metadata } from "next";
  */
 export const siteConfig = {
   name: "ClipKaro",
-  description: "A modern Next.js template with best practices",
-  url: "https://example.com",
+  description: "Helping creators turn content into real opportunities.",
+  url: "https://clipkaro.in",
   author: {
     name: "Your Name",
-    url: "https://example.com",
+    url: "https://clipkaro.in",
   },
   links: {
     twitter: "https://twitter.com/yourusername",
