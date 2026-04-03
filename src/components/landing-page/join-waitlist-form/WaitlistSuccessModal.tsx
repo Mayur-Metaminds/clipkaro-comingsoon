@@ -114,7 +114,7 @@ const WaitlistSuccessModal: React.FC<WaitlistSuccessModalProps> = ({
             {/* Social Icons */}
             <div className="mt-3 flex items-center justify-center gap-4 md:mt-4">
               <a
-                href="https://whatsapp.com"
+                href="https://chat.whatsapp.com/HME0R336GixCQOVTHF7I3N"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 transition-transform hover:scale-105"
