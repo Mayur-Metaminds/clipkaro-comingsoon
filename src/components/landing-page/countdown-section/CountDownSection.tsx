@@ -52,7 +52,7 @@ const CountdownUnit: React.FC<CountdownUnitProps> = ({ value, label }) => {
 
 const CountDownSection = () => {
   // Target date: April 30, 2026 at midnight IST (UTC+5:30)
-  const targetDate = new Date("202-05-18T00T00:00:00+05:30");
+  const targetDate = new Date("2026-05-20T00:00:00+05:30");
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
     calculateTimeLeft(targetDate)
